@@ -1,7 +1,7 @@
-<h1>Beers</h1>
+<h2 class="title is-2">Beers</h2>
 
-<ul>
+<ol class="ml-5">
 <% @beers.each do | beer | %>
 <li><%= link_to beer.name, beer%> is made by <%= beer.brewery.name %></li>
 <% end %>
-</ul>
+</ol>

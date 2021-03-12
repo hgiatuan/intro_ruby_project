@@ -1,2 +1,7 @@
-<h1>Breweries#index</h1>
-<p>Find me in app/views/breweries/index.html.erb</p>
+<h2 class="title is-2">Breweries</h2>
+
+<ol class="ml-5">
+<% @breweries.each do | brewery | %>
+<li><%= brewery.name %></li>
+<% end %>
+</ol>
