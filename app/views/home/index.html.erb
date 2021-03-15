@@ -1,2 +1,32 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="columns">
+
+<div class="column">
+<h2 class="title is-2">Top 10 Beers</h2>
+<ol class="ml-5">
+<% @beers.each do | beer | %>
+<li>
+  <%= link_to beer.name,beer %>
+  <em>(<%= beer.brewery.name%>)</em>
+</li>
+<%end %>
+
+</ol>
+</div>
+
+
+<div class="column">
+<h2 class="title is-2">Top 10 Breweries</h2>
+
+<ol class="ml-5">
+<% @breweries.each do | brewery | %>
+<li>
+  <%= link_to brewery.name,brewery %>
+  <em>(<%= pluralize brewery.breweries_count, "Beer"%>) </em>
+</li>
+<%end %>
+
+</ol>
+
+</div>
+
+</div>
