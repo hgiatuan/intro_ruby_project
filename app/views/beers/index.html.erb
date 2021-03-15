@@ -1,7 +1,3 @@
-<h2 class="title is-2">Beers</h2>
-
 <ol class="ml-5">
-<% @beers.each do | beer | %>
-<li><%= link_to beer.name, beer%> is made by <%= beer.brewery.name %></li>
-<% end %>
+  <%= render partial: 'beer', collection: @beers, locals: { show_link: true }%>
 </ol>

@@ -1,7 +1,5 @@
 <h2 class="title is-2">Breweries</h2>
 
 <ol class="ml-5">
-<% @breweries.each do | brewery | %>
-<li><%= link_to brewery.name, brewery %> <em>(<%= pluralize brewery.breweries_count, "Beer"%>)</em></li>
-<% end %>
+<%= render @breweries%>
 </ol>

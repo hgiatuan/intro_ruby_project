@@ -2,15 +2,17 @@
 
 <div class="column">
 <h2 class="title is-2">Top 10 Beers</h2>
-<ol class="ml-5">
-<% @beers.each do | beer | %>
-<li>
-  <%= link_to beer.name,beer %>
-  <em>(<%= beer.brewery.name%>)</em>
-</li>
-<%end %>
-</ol>
-<strong class="mt-5"><%= link_to "Link to all beer products", beers_path%></strong>
+  <ol class="ml-5">
+    <% @beers.each do | beer | %>
+      <li>
+        <%= link_to beer.name,beer %>
+        <em>(<%= beer.brewery.name%>)</em>
+      </li>
+    <%end %>
+  </ol>
+<p class="mt-5">
+  <strong ><%= link_to "🍺 Link to all beer products", beers_path%></strong>
+</p>
 </div>
 
 
@@ -18,14 +20,11 @@
 <h2 class="title is-2">Top 10 Breweries</h2>
 
 <ol class="ml-5">
-<% @breweries.each do | brewery | %>
-<li>
-  <%= link_to brewery.name,brewery %>
-  <em>(<%= pluralize brewery.breweries_count, "Beer"%>) </em>
-</li>
-<%end %>
+  <%= render @breweries %>
 </ol>
-<strong class="mt-5"><%= link_to "Link to all breweries", breweries_path%></strong>
+<p class="mt-5">
+  <strong><%= link_to "🏭 Link to all breweries", breweries_path%></strong>
+</p>
 </div>
 
 </div>
