@@ -8,7 +8,10 @@
 
 require "csv"
 
+BeerStyle.delete_all
+Style.delete_all
 Beer.delete_all
+
 Brewery.delete_all
 Page.delete_all
 
@@ -43,7 +46,16 @@ beers.each  do | b |
       review_score: b["review_overall"],
       alcohol_percent: b["beer_abv"]
     )
-    puts "invalid #{b["beer_name"]}" unless beer&.valid?
+    unless beer&.valid?
+      puts "invalid #{b["beer_name"]}"
+      next
+    end
+
+      styles = b['beer_style'].split (" / ")
+      styles.each do | style_name |
+        style = Style.find_or_create_by(name: style_name)
+        BeerStyle.create(beer: beer, style: style)
+      end
   else
     puts "invalid brewery #{b["brewery_name"]} for #{b["beer_name"]}."
 
@@ -51,5 +63,6 @@ beers.each  do | b |
 end
 
 puts "Created #{Brewery.count} Breweries"
-
 puts "Created #{Beer.count} Beers"
+puts "Created #{Style.count} Styles"
+puts "Created #{BeerStyle.count} Beer Styles"
