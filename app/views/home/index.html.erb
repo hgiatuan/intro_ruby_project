@@ -9,8 +9,8 @@
   <em>(<%= beer.brewery.name%>)</em>
 </li>
 <%end %>
-
 </ol>
+<strong class="mt-5"><%= link_to "Link to all beer products", beers_path%></strong>
 </div>
 
 
@@ -24,9 +24,8 @@
   <em>(<%= pluralize brewery.breweries_count, "Beer"%>) </em>
 </li>
 <%end %>
-
 </ol>
-
+<strong class="mt-5"><%= link_to "Link to all breweries", breweries_path%></strong>
 </div>
 
 </div>
