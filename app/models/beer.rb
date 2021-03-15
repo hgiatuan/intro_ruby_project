@@ -6,4 +6,7 @@ class Beer < ApplicationRecord
   validates :name, uniqueness: true
   validates :review_time, numericality: { only_integer: true}
   validates :review_score, :alcohol_percent, numericality: true
+  def styles_list
+    styles.map(&:name).join(", ")
+  end
 end
