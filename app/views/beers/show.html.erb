@@ -1,5 +1,7 @@
-<h2 class="title is-2"><%= @beer.name %></h2>
 
+<% content_for(:html_title) {@beer.name} %>
+
+<h2 class="title is-2"><%= @beer.name %></h2>
 
 <progress class="progress is-info" value="<%=@beer.review_score %>" max=4>
 <%= @beer.review_score%>
