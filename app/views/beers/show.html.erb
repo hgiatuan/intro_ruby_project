@@ -1,1 +1,27 @@
 <h2 class="title is-2"><%= @beer.name %></h2>
+
+
+<progress class="progress is-info" value="<%=@beer.review_score %>" max=4>
+<%= @beer.review_score%>
+</progress>
+
+<p>
+<strong>Review Score:</strong>
+<%= @beer.review_score%>
+</p>
+
+<p>
+<strong>Number of Reviews:</strong>
+<%= @beer.review_time%>
+</p>
+
+<p>
+<strong>Alcohol Percent:</strong>
+<%= @beer.alcohol_percent%>
+</p>
+
+
+<p>
+<strong>Brewery:</strong>
+<%= link_to @beer.brewery.name, @beer.brewery%>
+</p>

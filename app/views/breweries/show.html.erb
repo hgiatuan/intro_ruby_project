@@ -1,1 +1,9 @@
 <h2 class="title is-2"><%= @brewery.name %></h2>
+
+<h3 class="title is-3"> <%=@brewery.name%> offering the following products:  </h3>
+
+<ul>
+<% @brewery.beers.each do | beer |%>
+  <li><%= link_to beer.name, beer %></li>
+<% end %>
+</ul>
