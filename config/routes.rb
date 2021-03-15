@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pages
   get 'home/index'
   resources :beers, only: [:index,:show]
   resources :breweries, only: [:index,:show]
