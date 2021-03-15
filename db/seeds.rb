@@ -10,6 +10,20 @@ require "csv"
 
 Beer.delete_all
 Brewery.delete_all
+Page.delete_all
+
+Page.create(
+  title: "About The Won Tuan",
+  content: "This is a brewering retailer.",
+  permalink: "about_us"
+)
+
+Page.create(
+  title: "Contact Us",
+  content: "Please contact us.",
+  permalink: "contact_us"
+)
+
 
 filename = Rails.root.join("top_beers.csv")
 
