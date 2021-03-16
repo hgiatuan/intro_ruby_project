@@ -15,6 +15,18 @@ Beer.delete_all
 Brewery.delete_all
 Page.delete_all
 
+CompanySite.delete_all
+
+10.times do
+CompanySite.create(
+  country: Faker::Address.country,
+  full_address: Faker::Address.full_address,
+  longitude: Faker::Address.longitude,
+  latitude: Faker::Address.latitude
+)
+end
+
+
 Page.create(
   title: "About The Won Tuan",
   content: "This is a brewering retailer.",

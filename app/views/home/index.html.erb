@@ -1,3 +1,14 @@
+<div id='map' style='width: 1200px; height: 500px;'></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoidHVhbmh1eW5oIiwiYSI6ImNrbWJneGs2djIyMGYycHFsY2tscDV0ZzMifQ.-E7LG-bJTdLEcuWf_gQ6hw';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: ['<%=@companysite.longitude%>', '<%=@companysite.latitude%>'],
+    zoom: 4
+    });
+  </script>
+
 <div class="columns">
 
 <div class="column">
@@ -28,3 +39,5 @@
 </div>
 
 </div>
+
+<%= @companysite.full_address %>

@@ -4,5 +4,7 @@ class HomeController < ApplicationController
 
     @breweries = Brewery.order_by_beers.limit(10)
 
+    @companysite = CompanySite.find(1)
+
   end
 end
