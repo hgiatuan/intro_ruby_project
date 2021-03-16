@@ -1,3 +1,8 @@
 <ol class="ml-5">
   <%= render partial: 'beer', collection: @beers, locals: { show_link: true }%>
 </ol>
+
+<div>
+  <%= link_to "Previous", beers_path(page: @page - 1), class: "button is-link"%>
+  <%= link_to "Next", beers_path(page: @page + 1), class: "button is-link"%>
+</div>

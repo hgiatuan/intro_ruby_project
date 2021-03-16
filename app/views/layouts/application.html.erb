@@ -15,6 +15,13 @@
   <section class="section">
     <div class="container">
     <h1 class="title is-1"><%= link_to "The Won Tuan Brewery", root_path %></h1>
+    <%= form_with(url: search_beers_path, method: :get, local: true) do |form| %>
+    <div class="field is-grouped">
+      <%= text_field_tag( :keywords, nil, class: "input", placeholder: "Search for a beer" )%>
+      <%= submit_tag( "Search", class: "button is-link")  %>
+    </div>
+
+    <% end %>
     <%= yield %>
     <%= render partial: 'shared/footer' %>
     </div>

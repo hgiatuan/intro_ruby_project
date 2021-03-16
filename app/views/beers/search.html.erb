@@ -1,0 +1,7 @@
+<p class="ml-5">Found <%= pluralize( @beers.count, "Beer")  %> when searching for <%= params[:keywords]%> </p>
+
+<ol class="ml-5 mt-5">
+<% @beers.each do | beer | %>
+<li><%= link_to beer.name, beer%></li>
+<% end %>
+</ol>
